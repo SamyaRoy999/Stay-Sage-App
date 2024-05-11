@@ -1,18 +1,15 @@
 
 import { useTypewriter } from 'react-simple-typewriter'
 
-// import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-// import './styles.css';
 
-// import required modules
 import { Pagination } from 'swiper/modules';
+
 
 
 const Banner = () => {
@@ -25,7 +22,6 @@ const Banner = () => {
         <div className=' '>
             <div className=' relative bg-cover h-[90vh] bg-center  bg-no-repeat    bottom-0 bg-[url("https://i.ibb.co/vLM7SPH/yuliya-pankevich-oyxs-G2-Lh-u-A-unsplash.jpg")]'>
                 <div className='absolute inset-0 bg-gradient-to-r  from-[#00000092] '></div>
-                {/* <img className=' w-full h-[80vh]' src="" alt="" /> */}
                 <div className=' relative mx-auto container h-[40vh]'>
                     <div className=' font-Poppins absolute   top-20 text-5xl  w-3/4  font-bold'>
                         Exclusive Deals Await <br  />
@@ -71,7 +67,7 @@ const Banner = () => {
                         className="mySwiper"
                     >
                         <SwiperSlide >
-                            <div className="  bg-white border border-gray-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <div  className="  bg-white border border-gray-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                 <a >
                                     <img className="rounded-lg h-[45vh]" src="https://i.ibb.co/FWsS9CT/bilderboken-rlw-E8f8an-Oc-unsplash.jpg" />
                                 </a>
