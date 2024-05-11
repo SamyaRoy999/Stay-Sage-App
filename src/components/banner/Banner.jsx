@@ -1,5 +1,5 @@
 
-import { useTypewriter } from 'react-simple-typewriter'
+import {  useTypewriter } from 'react-simple-typewriter'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -15,7 +15,7 @@ import { Pagination } from 'swiper/modules';
 const Banner = () => {
     const [text] = useTypewriter({
         words: ['Limited Time Offer', 'Donot Miss Out', 'Book Now!'],
-        loop: 20,
+        loop: 0,
         onLoopDone: () => console.log(`loop completed after 3 runs.`)
     })
     return (
@@ -24,11 +24,13 @@ const Banner = () => {
                 <div className='absolute inset-0 bg-gradient-to-r  from-[#00000092] '></div>
                 <div className=' relative mx-auto container h-[40vh]'>
                     <div className=' font-Poppins absolute   top-20 text-5xl  w-3/4  font-bold'>
-                        Exclusive Deals Await <br  />
-                        {text}|
+                        Exclusive Deals Await <br />
+                        <span></span>
+                            {text}|
+                            
                     </div>
                     <div className="  absolute bottom-5 container">
-                        <div style={{"transform": "none"}}>
+                        <div style={{ "transform": "none" }}>
                             <a >
                                 <button
                                     className="relative inline-block p-px font-semibold leading-6 text-white no-underline bg-gray-800 shadow-2xl cursor-pointer group rounded-xl shadow-zinc-900"><span
@@ -67,7 +69,7 @@ const Banner = () => {
                         className="mySwiper"
                     >
                         <SwiperSlide >
-                            <div  className="  bg-white border border-gray-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <div className="  bg-white border border-gray-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                 <a >
                                     <img className="rounded-lg h-[45vh]" src="https://i.ibb.co/FWsS9CT/bilderboken-rlw-E8f8an-Oc-unsplash.jpg" />
                                 </a>
