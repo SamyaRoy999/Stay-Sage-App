@@ -26,8 +26,7 @@ const Banner = () => {
                     <div className=' font-Poppins absolute   top-20 text-5xl  w-3/4  font-bold'>
                         Exclusive Deals Await <br />
                         <span></span>
-                            {text}|
-                            
+                            {text}|           
                     </div>
                     <div className="  absolute bottom-5 container">
                         <div style={{ "transform": "none" }}>

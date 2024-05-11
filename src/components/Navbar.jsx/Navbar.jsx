@@ -39,7 +39,7 @@ const Navbar = () => {
                     <div className=' w-10 md:w-16  -m-2  lg:w-20 '>
                         <img src="https://i.ibb.co/tYShWGR/depositphotos-183079166-stock-illustration-hotel-tourism-holiday-summer-beach.webp" alt="" />
                     </div>
-                    <a className="text-xl md:text-2xl pl-2  lg:text-3xl font-bold font-montserrat flex items-center"> Relaxa<span className=' text-[#4793AF]'>tion</span></a>
+                    <a className="text-xl md:text-2xl pl-2  lg:text-3xl font-bold font-montserrat flex items-center"> Stay<span className=' text-[#90B0B7]'>Sage</span></a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

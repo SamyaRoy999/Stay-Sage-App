@@ -1,4 +1,4 @@
-import { FaGithub } from "react-icons/fa";
+
 import { IoLogoGoogle } from "react-icons/io";
 import { useForm } from "react-hook-form"
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -10,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 
 const Login = () => {
-    const { googleLogin, githubLogin, signInUser } = useContext(AuthContext)
+    const { googleLogin,  signInUser } = useContext(AuthContext)
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -60,7 +60,7 @@ const Login = () => {
     return (
         <>
 
-            <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url('https://i.ibb.co/tXWZZ4k/painting-woman-s-portrait.jpg')]">
+            <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url('https://i.ibb.co/chkFtjL/patrick-robert-doyle-AH8z-KXq-FITA-unsplash.jpg')]">
             <ToastContainer />
                 <div className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
                     <div className="text-white">
@@ -73,7 +73,7 @@ const Login = () => {
                             <div className="mb-4 text-lg">
                                 <input type="email"
                                     name="name"
-                                    className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" placeholder="id@email.com"
+                                    className="rounded-3xl border-none bg-[#90B0B7] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" placeholder="id@email.com"
                                     {...register("email", { required: true })} />
                                 {errors.email && <span>This field is required</span>}
                             </div>
@@ -82,12 +82,12 @@ const Login = () => {
                                 <input
                                     type="password"
                                     name="password"
-                                    className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" placeholder="*********"
+                                    className="rounded-3xl border-none bg-[#90B0B7] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" placeholder="*********"
                                     {...register("password", { required: true })} />
                                 {errors.password && <span>This field is required</span>}
                             </div>
                             <div className="mt-8 flex justify-center text-lg text-black">
-                                <button type="submit" className="rounded-3xl bg-[#E65B56] bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600">Login</button>
+                                <button type="submit" className="rounded-3xl bg-[#90B0B7] bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600">Login</button>
                             </div>
                             {/*  Divider  */}
                             <div
@@ -99,10 +99,9 @@ const Login = () => {
                             </div>
                         </form>
                         <p>Continue with</p>
-                        <div className=' flex gap-2'>
-
+                        <div className=' flex justify-center  '>
                             <a
-                                className="rounded-3xl flex items-center gap-2 border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                                className="rounded-3xl  flex items-center gap-2 border-none bg-[#90B0B7] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
 
                                 onClick={() => hendelSocial(googleLogin)}
                                 role="button"
@@ -113,23 +112,8 @@ const Login = () => {
                                 />
                                 Google
                             </a>
-
-                            <a
-                                className="rounded-3xl flex items-center gap-2 border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
-                                // style="background-color: "
-
-                                role="button"
-                                data-twe-ripple-init
-                                data-twe-ripple-color="light"
-                                onClick={() => hendelSocial(githubLogin)}
-
-                            >
-                                {/*  X  */}
-                                <FaGithub className=" text-2xl " />
-                                Github
-                            </a>
                         </div>
-                        <p>Do not have an account   <Link to='/register' className=" text-[#E65B56]">Register</Link></p>
+                        <p>Do not have an account   <Link to='/register' className=" text-[#90B0B7]">Register</Link></p>
                     </div>
                 </div>
             </div>
