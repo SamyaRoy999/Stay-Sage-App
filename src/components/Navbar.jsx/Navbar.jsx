@@ -11,7 +11,7 @@ const Navbar = () => {
 
     const NabList = <>
         <NavLink to='/' className=' mr-3 text-sm font-montserrat '><a>Home</a></NavLink>
-        <NavLink to='/travel' className='  mr-3 text-sm font-montserrat'><a>TravelTips</a></NavLink>
+        <NavLink to='/register' className='  mr-3 text-sm font-montserrat'><a>Register</a></NavLink>
         <NavLink to='/privateEvents' className='  mr-3 text-sm font-montserrat'><a>PrivateEvents</a></NavLink>
         {
 
@@ -25,7 +25,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100 ">
+        <div className="navbar bg-base-100 font-Poppins">
             <div className="navbar-start">
                 <div className="dropdown z-10">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,28 +48,28 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user ? <><a className="flex gap-1 items-center font-bold  text-sm lg:text-lg font-montserrat  btn btn-outline btn-info " onClick={() => userSignOut()}> <FiLogOut className='text-xl ' /> Logout</a>
+                {user ? <><a className="flex gap-1 items-center font-bold  text-sm lg:text-lg font-montserrat cursor-pointer  text-[#90B0B7] " onClick={() => userSignOut()}> <FiLogOut className='text-xl ' /> Logout</a>
                     <div className="">
-                        <div className="group relative cursor-pointer py-2">
+                        <div className="group relative cursor-pointer  px-4">
 
-                            <div className="flex items-center justify-between space-x-5 bg-white px-4">
+                            <div className="flex items-center  justify-between space-x-5 p-1 bg-white ">
                                 <a className="menu-hover  " onClick="">
-                                    <div className="avatar">
-                                        <div className="w-12  rounded-full">
+                                    <div className="avatar border-4 rounded-full  border-[#90B0B7] p-1">
+                                        <div className="w-7   rounded-full">
                                             <img src={user.photoURL || photo} />
                                         </div>
                                     </div>
                                 </a>
                             </div>
                             <div
-                                className="invisible absolute z-50 flex w-full flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
-                                <a className="my-2 block border-b  w-full border-gray-100  font-semibold text-gray-500 hover:text-black ">
+                                className="invisible absolute z-50 flex w-28  right-0 flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
+                                <a className="my-2 block border-b    w-full border-gray-100  font-semibold text-gray-500 hover:text-black ">
                                     {user.displayName || Name}
                                 </a>
 
                             </div>
                         </div>
-                    </div></> : <Link to='./login'><button className='flex gap-1 items-center font-bold text-base lg:text-lg font-montserrat  btn btn-outline btn-info '><CiLogin className='text-xl' /> Login</button></Link>}
+                    </div></> : <Link to='./login'><button className='flex gap-1 items-center font-bold text-base lg:text-lg font-montserrat btn-md  btn btn-outline text-[#90B0B7] '><CiLogin className='text-xl' /> Login</button></Link>}
             </div>
         </div>
     )
