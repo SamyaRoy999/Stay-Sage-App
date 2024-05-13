@@ -6,13 +6,14 @@ import Main from "../layout/Main";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Error from "../Pages/Error/Error";
+import SingelRoom from "../Pages/SingelRoom/SingelRoom";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main />,
-        errorElement: <Error/>,
+        errorElement: <Error />,
         children: [
             {
                 path: "/",
@@ -20,11 +21,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "/login",
-                element: <Login/>,
+                element: <Login />,
             },
             {
                 path: "/register",
-                element: <Register/>,
+                element: <Register />,
+            },
+            {
+                path: "/singleRoom/:id",
+                element: <SingelRoom />,
             }
         ]
     },
