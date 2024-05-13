@@ -11,7 +11,7 @@ const Navbar = () => {
 
     const NabList = <>
         <NavLink to='/' className=' mr-3 text-sm font-montserrat '><a>Home</a></NavLink>
-        <NavLink to='/register' className='  mr-3 text-sm font-montserrat'><a>Register</a></NavLink>
+        <NavLink to='/rooms' className='  mr-3 text-sm font-montserrat'><a>Rooms</a></NavLink>
         {/* <NavLink to='/privateEvents' className='  mr-3 text-sm font-montserrat'><a>PrivateEvents</a></NavLink> */}
         {
 
