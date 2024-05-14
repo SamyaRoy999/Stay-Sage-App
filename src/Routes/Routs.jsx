@@ -8,6 +8,8 @@ import Register from "../Pages/Register/Register";
 import Error from "../Pages/Error/Error";
 import SingelRoom from "../Pages/SingelRoom/SingelRoom";
 import Rooms from "../Pages/Rooms/Rooms";
+import MyRooms from "../Pages/MyRoooms/MyRooms";
+import PrivetedRoute from "../Priveted/PrivetedRoute";
 
 
 const router = createBrowserRouter([
@@ -36,7 +38,12 @@ const router = createBrowserRouter([
             {
                 path: "/singleRoom/:id",
                 element: <SingelRoom />,
-            }
+            },
+            {
+                path: "myRooms",
+                element:  <PrivetedRoute> <MyRooms /> </PrivetedRoute>
+            },
+
         ]
     },
 ]);

@@ -12,16 +12,8 @@ const Navbar = () => {
     const NabList = <>
         <NavLink to='/' className=' mr-3 text-sm font-montserrat '><a>Home</a></NavLink>
         <NavLink to='/rooms' className='  mr-3 text-sm font-montserrat'><a>Rooms</a></NavLink>
-        {/* <NavLink to='/privateEvents' className='  mr-3 text-sm font-montserrat'><a>PrivateEvents</a></NavLink> */}
-        {
-
-            user && (
-                <>
-                    {/* <NavLink to='/userProfile' className='  mr-3 text-sm font-montserrat'><a> UserProfile</a></NavLink>
-                    <NavLink to='/updateProfile' className='  mr-3 text-sm font-montserrat'><a>UpdateProfile</a></NavLink> */}
-                </>
-            )
-        }
+        <NavLink to='myRooms' className='  mr-3 text-sm font-montserrat'><a>My Bookings</a></NavLink>
+        
     </>
 
     return (

@@ -8,13 +8,13 @@ const Newsletter = () => {
 
                 <section className="mb-32 text-center lg:text-left">
                     <div
-                        className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                        className="block  rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                         <div className="flex flex-wrap items-center">
-                            <div className=" relative hidden shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
+                            <div className=" relative w-full  shrink-0 grow-0 basis-auto lg:flex lg:w-6/12">
                                 <img src="https://i.ibb.co/mv6PZH8/point3d-commercial-imaging-ltd-oxe-CZrodz78-unsplash.jpg" alt="Trendy Pants and Shoes"
                                     className="w-full   h-[500px]" />
 
-                                    <div className=" -right-20 font-bold  top-[40%] rotate-90  flex justify-center items-center  absolute  text-4xl py-6 px-6  text-white  bg-[#90B0B7]">
+                                    <div className=" right-0 lg:-right-20 font-bold top-[0%]  lg:top-[40%] lg:rotate-90  flex justify-center items-center  absolute  text-4xl py-6 px-6  text-white  bg-[#90B0B7]">
                                         <h1>50% off</h1>
                                     </div>
                             </div>

@@ -55,7 +55,7 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div className=' ml-32'>
+                <div className=' ml-32 '>
                     <Swiper
                         slidesPerView={4}
                         centeredSlides={true}
@@ -65,12 +65,12 @@ const Banner = () => {
                             clickable: true,
                         }}
                         modules={[Pagination]}
-                        className="mySwiper"
+                        className="mySwiper lg:w-full "
                     >
                         <SwiperSlide >
-                            <div className="  bg-white border border-gray-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <div className="   bg-white border border-gray-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                 <a >
-                                    <img className="rounded-lg h-[45vh]" src="https://i.ibb.co/FWsS9CT/bilderboken-rlw-E8f8an-Oc-unsplash.jpg" />
+                                    <img className="rounded-lg  h-[45vh]" src="https://i.ibb.co/FWsS9CT/bilderboken-rlw-E8f8an-Oc-unsplash.jpg" />
                                 </a>
                             </div>
                         </SwiperSlide>
