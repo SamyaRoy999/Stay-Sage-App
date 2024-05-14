@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { AuthContext } from "../../AuthProvider/AuthProvider"
 import DatePicker from "react-datepicker";
+import axios from 'axios'
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -22,7 +23,7 @@ const SingelRoom = () => {
                 setSingleRooms(data);
             })
     }, [])
-    const addedBook = () => {
+    const addedBook = async() => {
         const userEmail = user?.email;
 
         const auhtData = {
@@ -32,6 +33,13 @@ const SingelRoom = () => {
         }
 
         console.log(auhtData);
+        try {
+            const { data } = await  axios.post("http://localhost:5000/mybook",auhtData)
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
+
     }
     return (
         <div className="bg-gray-100 dark:bg-gray-800 py-16 font-Poppins">
