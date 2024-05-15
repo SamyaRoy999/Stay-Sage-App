@@ -29,6 +29,7 @@ const SingelRoom = () => {
         const auhtData = {
             userEmail,
             images,
+            name,
             startDate: startDate.toLocaleDateString("en-GB")
         }
 
