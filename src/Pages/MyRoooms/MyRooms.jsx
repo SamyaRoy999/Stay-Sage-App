@@ -1,7 +1,8 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../../AuthProvider/AuthProvider"
 import axios from "axios";
-
+import { LiaEdit } from "react-icons/lia";
+import Swal from "sweetalert2"
 
 const MyRooms = () => {
     const [myData, setmyData] = useState([])
@@ -13,10 +14,35 @@ const MyRooms = () => {
 
     myRoomsEmail()
 
-    const heldelCancel = id =>{
-        alert(id)
-    }
+    const heldelCancel = async id => {
 
+        const { isConfirmed } = await Swal.fire({
+            title: 'Are you sure?',
+            text: 'You won\'t be able to revert this!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, cancel it!'
+        });
+
+        if (isConfirmed) {
+            const { data } = await axios.delete(`http://localhost:5000/mybook/${id}`);
+            if (data.deletedCount > 0) {
+                Swal.fire(
+                    'Cancelled!',
+                    'Your booking has been cancelled.',
+                    'success'
+                );
+            } else {
+                Swal.fire(
+                    'Error!',
+                    'Failed to cancel the booking.',
+                    'error'
+                );
+            }
+        }
+    }
     return (
         <div>
             <div className="overflow-x-auto font-Poppins">
@@ -31,7 +57,7 @@ const MyRooms = () => {
                             </th>
                             <th>Name</th>
                             <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Edit Date</th>
                             <th>Cancel Room</th>
                         </tr>
                     </thead>
@@ -53,32 +79,20 @@ const MyRooms = () => {
                                         </div>
                                         <div>
                                             <div className="font-bold">{item?.name}</div>
-                                            
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     {item?.startDate}
                                 </td>
-                                <td>Purple</td>
+                                <td> <LiaEdit className=" text-2xl" /></td>
                                 <th>
-                                <button onClick={()=>heldelCancel(item._id)} className="py-2.5 px-6 rounded-lg text-sm font-medium bg-teal-200 text-teal-800">Cancel</button>
+                                    <button onClick={() => heldelCancel(item._id)} className="py-2.5 px-6 rounded-lg text-sm font-medium bg-teal-200 text-teal-800">Cancel</button>
                                 </th>
                             </tr>
 
                         </tbody>
                     ))}
-                    {/* foot */}
-                    <tfoot>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
-                        </tr>
-                    </tfoot>
-
                 </table>
             </div>
         </div>
