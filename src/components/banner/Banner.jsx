@@ -1,34 +1,52 @@
 
-import {  useTypewriter } from 'react-simple-typewriter'
-
+import { useTypewriter } from 'react-simple-typewriter'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-
 import 'swiper/css';
 import 'swiper/css/pagination';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Swal from "sweetalert2"
 
 import { Pagination } from 'swiper/modules';
+import { useEffect } from 'react';
+
 
 
 
 const Banner = () => {
+  
+    useEffect(() => {
+        AOS.init({ duration: 1500, });
+    }, [])
+
+
     const [text] = useTypewriter({
         words: ['Limited Time Offer', 'Donot Miss Out', 'Book Now!'],
         loop: 0,
         onLoopDone: () => console.log(`loop completed after 3 runs.`)
     })
+    const offerbutton=() => {
+        Swal.fire({
+            title: "50% off",
+            text: "Limited Time Offer Donot Miss Out Book Now!",
+            imageUrl: "https://i.ibb.co/mv6PZH8/point3d-commercial-imaging-ltd-oxe-CZrodz78-unsplash.jpg",
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: "Custom image"
+        });
+    }
+
     return (
         <div className=' '>
             <div className=' relative bg-cover h-[90vh] bg-center  bg-no-repeat    bottom-0 bg-[url("https://i.ibb.co/vLM7SPH/yuliya-pankevich-oyxs-G2-Lh-u-A-unsplash.jpg")]'>
                 <div className='absolute inset-0 bg-gradient-to-r  from-[#00000092] '></div>
                 <div className=' relative mx-auto container h-[40vh]'>
-                    <div className=' font-Poppins absolute   top-20 text-5xl  w-3/4  font-bold'>
+                    <div className=' font-Poppins absolute   top-20 text-5xl  w-3/4  font-bold' data-aos="fade-up">
                         Exclusive Deals Await <br />
                         <span></span>
-                            {text}|           
+                        {text}|
                     </div>
-                    <div className="  absolute bottom-5 container">
+                    <div className="  absolute bottom-5 container" data-aos="fade-down">
                         <div style={{ "transform": "none" }}>
                             <a >
                                 <button
@@ -38,9 +56,9 @@ const Banner = () => {
 
                                         </span>
                                     </span>
-                                    <div
+                                    <div onClick={offerbutton}
                                         className="relative z-10 flex items-center px-6 py-3 space-x-2 rounded-xl bg-gray-950/50 ring-1 ring-white/10 ">
-                                        <span>Book Now!</span>
+                                        <span>Special Offers</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
                                             data-slot="icon" className="w-6 h-6">
                                             <path fillRule="evenodd"
@@ -55,7 +73,7 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div className=' ml-32 '>
+                <div className=' ml-32 ' data-aos="fade-down">
                     <Swiper
                         slidesPerView={4}
                         centeredSlides={true}
@@ -65,6 +83,7 @@ const Banner = () => {
                             clickable: true,
                         }}
                         modules={[Pagination]}
+
                         className="mySwiper lg:w-full "
                     >
                         <SwiperSlide >

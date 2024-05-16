@@ -5,9 +5,9 @@ const FeatureCard = ({ rooms }) => {
     console.log(rooms);
     const { _id, images, name, price, description } = rooms
     return (
-        <div>
+        <div >
             <Link to={`/singleRoom/${_id}`}>
-                <div className="relative font-Poppins flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-full">
+                <div  className="relative font-Poppins flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-full">
                     <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-96">
                         <img
                             src={images[0]}

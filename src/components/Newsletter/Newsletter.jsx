@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Newsletter = () => {
+    
+    useEffect(() => {
+        AOS.init({ duration: 1500, });
+    }, [])
     return (
         <div>
 
@@ -10,15 +17,15 @@ const Newsletter = () => {
                     <div
                         className="block  rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                         <div className="flex flex-wrap items-center">
-                            <div className=" relative w-full  shrink-0 grow-0 basis-auto lg:flex lg:w-6/12">
+                            <div data-aos="fade-right" className=" relative w-full  shrink-0 grow-0 basis-auto lg:flex lg:w-6/12">
                                 <img src="https://i.ibb.co/mv6PZH8/point3d-commercial-imaging-ltd-oxe-CZrodz78-unsplash.jpg" alt="Trendy Pants and Shoes"
                                     className="w-full   h-[500px]" />
 
-                                    <div className=" right-0 lg:-right-20 font-bold top-[0%]  lg:top-[40%] lg:rotate-90  flex justify-center items-center  absolute  text-4xl py-6 px-6  text-white  bg-[#90B0B7]">
-                                        <h1>50% off</h1>
-                                    </div>
+                                <div className=" right-0 lg:-right-20 font-bold top-[0%]  lg:top-[40%] lg:rotate-90  flex justify-center items-center  absolute  text-4xl py-6 px-6  text-white  bg-[#90B0B7]">
+                                    <h1>50% off</h1>
+                                </div>
                             </div>
-                            <div className="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
+                            <div data-aos="fade-left" className="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
                                 <div className="px-6 py-12 md:px-12 lg:ml-6">
                                     <h4 className=" font-bold text-3xl mb-6 relative"><div className=" bg-[#90B0B7] h-2  w-12 absolute top-4  right-14  lg:right-44"></div> Join Our</h4>
                                     <h4 className=" font-bold text-5xl text-[#90B0B7] mb-4">NEWSLETTER</h4>

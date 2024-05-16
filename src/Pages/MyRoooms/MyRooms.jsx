@@ -5,6 +5,7 @@ import { LiaEdit } from "react-icons/lia";
 import Swal from "sweetalert2"
 import DatePicker from "react-datepicker";
 import { ToastContainer, toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const MyRooms = () => {
     const [myData, setmyData] = useState([])
@@ -62,9 +63,17 @@ const MyRooms = () => {
         // }
         myRoomsEmail()
     }
+    const handleReviewSubmit = async (e) => {
+        e.preventDefault();
+
+    };
 
     return (
         <div>
+            <Helmet>
+                <title>MYROOMS || StaySage</title>
+            </Helmet>
+
             <ToastContainer />
             <div className="overflow-x-auto font-Poppins min-h-screen">
                 <table className="table">
@@ -82,10 +91,10 @@ const MyRooms = () => {
                             <th>Cancel Room</th>
                         </tr>
                     </thead>
-                    {myData.map(item => (
-                        <tbody key={item._id}>
-                            {/* row 1 */}
-                            <tr>
+                    <tbody>
+                        {/* row 1 */}
+                        {myData.map(item => (
+                            <tr key={item._id}>
                                 <th>
                                     <label>
                                         <input type="checkbox" className="checkbox" />
@@ -117,16 +126,24 @@ const MyRooms = () => {
                                     setModul(!modul)
                                 }}>
 
-                                    {modul ? <button className="badge badge-info gap-2" onClick={() => { setModul(true) ; toast.success(' Update Dete Successful!')  }}>set</button> : <LiaEdit className=" text-2xl" />}
+                                    {modul ? <button className="badge badge-info gap-2" onClick={() => { setModul(true); toast.success(' Update Dete Successful!') }}>set</button> : <LiaEdit className=" text-2xl" />}
 
                                 </td>
                                 <th>
                                     <button onClick={() => heldelCancel(item._id)} className="py-2.5 px-6 rounded-lg text-sm font-medium bg-teal-200 text-teal-800">Cancel</button>
                                 </th>
+                                <th>
+                                    <form onSubmit={handleReviewSubmit}>
+                                        <textarea placeholder="comment" className="w-full h-20 border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:ring focus:border-blue-300"></textarea>
+                                        <input type="text" placeholder="timestamp" />
+                                        <input type="number" placeholder="rating" name="" id="" />
+                                        <button type="submit" className="bg-gray-900 text-white px-4 py-2">Submit Review</button>
+                                    </form>
+                                </th>
                             </tr>
+                        ))}
 
-                        </tbody>
-                    ))}
+                    </tbody>
                 </table>
             </div>
         </div>

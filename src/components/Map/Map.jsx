@@ -1,5 +1,7 @@
 import { Map, GeoJson, GeoJsonFeature, Marker } from "pigeon-maps";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 const geoJsonFeatureSample = {
     type: "Feature",
     geometry: { type: "Point", coordinates: [2.0, 48.5] },
@@ -7,9 +9,13 @@ const geoJsonFeatureSample = {
 };
 
 const Maps = () => {
+   
+        useEffect(() => {
+            AOS.init({ duration: 1500, });
+        }, [])
     const center = [24.498, 91.77];
     return (
-        <Map height={300} defaultCenter={[24.498, 91.77]} defaultZoom={4}>
+        <Map height={300} defaultCenter={[24.498, 91.77]} defaultZoom={4} data-aos="fade-up">
             <GeoJson
                 svgAttributes={{
                     fill: "#d4e6ec99",

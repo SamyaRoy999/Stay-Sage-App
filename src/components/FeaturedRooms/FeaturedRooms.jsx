@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useEffect } from "react"
 import FeatureCard from "./FeatureCard/FeatureCard"
-
+// http://localhost:5000
 
 const FeaturedRooms = () => {
     const [featuredRooms, setFeaturedRooms] = useState([])
@@ -16,9 +16,9 @@ const FeaturedRooms = () => {
     }, [])
 
     return (
-        <div className=" mx-auto container mt-14  md:mt-20 lg:mt-24">
-            <h3 className=" font-bold text-4xl mb-6">Featured rooms</h3>
-            {logind ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div data-aos="fade-down" className=" mx-auto container mt-14  md:mt-20 lg:mt-24">
+            <h3 className=" font-bold text-4xl mb-6" data-aos="fade-left">Featured rooms</h3>
+            {logind ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" >
 
                 <div role="status" className="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700">
                     <div className="flex items-center justify-center h-60 mb-4 bg-gray-300 rounded dark:bg-gray-700">
@@ -88,7 +88,7 @@ const FeaturedRooms = () => {
                 </div>
 
             </div>
-                : <div className=" font-Poppins grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                : <div className=" font-Poppins grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" >
                     {featuredRooms.slice(0, 6).map(item => <FeatureCard key={item._id} rooms={item} />)}
                 </div>
             }

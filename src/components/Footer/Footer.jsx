@@ -1,7 +1,14 @@
-
+import AOS from 'aos';
+    import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 const Footer = () => {
+    
+    useEffect(() => {
+        AOS.init({duration: 1500,});
+    }, [])
+
     return (
-        <div> 
+        <div data-aos="flip-left"> 
             <div className=" bg-[#F3F4F6] font-Poppins">
                 <div >
                     <div className="p-5 col-span-4 text-center ">

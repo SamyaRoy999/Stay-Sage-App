@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom"
 import FeatureCard from "../../components/FeaturedRooms/FeatureCard/FeatureCard";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 
 
@@ -12,11 +13,11 @@ const Rooms = () => {
     const [filteredRooms, setFilteredRooms] = useState(rooms);
 
     const handleFilter = () => {
-       
+
         fetch(`http://localhost:5000/roomsr?minPrice=${minPrice}&maxPrice=${maxPrice}`)
             .then(response => response.json())
-            .then(data =>{
-                setFilteredRooms(data); 
+            .then(data => {
+                setFilteredRooms(data);
             })
             .catch(error => {
                 console.error('Error fetching filtered rooms:', error);
@@ -26,7 +27,9 @@ const Rooms = () => {
 
     return (
         <div className=" mx-auto container">
-
+            <Helmet>
+                <title>ROOMS || StaySage</title>
+            </Helmet>
             <div>
                 <input
                     type="number"

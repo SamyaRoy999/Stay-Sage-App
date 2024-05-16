@@ -6,6 +6,7 @@ import axios from 'axios'
 import Swal from "sweetalert2"
 
 import "react-datepicker/dist/react-datepicker.css";
+import { Helmet } from "react-helmet";
 
 const SingelRoom = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -73,6 +74,9 @@ const SingelRoom = () => {
     }
     return (
         <div className="bg-gray-100 dark:bg-gray-800 py-16 font-Poppins">
+             <Helmet>
+                <title> DETAILS || StaySage</title>
+            </Helmet>
             {setSingleRooms && (
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row -mx-4">
