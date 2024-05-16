@@ -46,7 +46,7 @@ const Banner = () => {
                         <span></span>
                         {text}|
                     </div>
-                    <div className="  absolute bottom-5 container" data-aos="fade-down">
+                    <div className="  absolute bottom-1 top-60 lg:bottom-5 container" data-aos="fade-down">
                         <div style={{ "transform": "none" }}>
                             <a >
                                 <button
@@ -73,7 +73,7 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div className=' ml-32 ' data-aos="fade-down">
+                <div className=' ml-32 hidden lg:block' data-aos="fade-down">
                     <Swiper
                         slidesPerView={4}
                         centeredSlides={true}
@@ -130,13 +130,3 @@ const Banner = () => {
 
 export default Banner
 
-// <a href="https://ibb.co/vLn8szy"><img src="https://i.ibb.co/HG8QNgw/reagan-m-d-e-WGv-LCZf-Q-unsplash.jpg" alt="reagan-m-d-e-WGv-LCZf-Q-unsplash" border="0"></a>
-// <a href="https://ibb.co/K7znytL"><img src="https://i.ibb.co/WFpCKrP/cory-bjork-D1y-T791-Nf9-A-unsplash.jpg" alt="cory-bjork-D1y-T791-Nf9-A-unsplash" border="0"></a>
-// <a href="https://ibb.co/TPNVs8k"><img src="https://i.ibb.co/vLM7SPH/yuliya-pankevich-oyxs-G2-Lh-u-A-unsplash.jpg" alt="yuliya-pankevich-oyxs-G2-Lh-u-A-unsplash" border="0"></a>
-
-
-
-// <a href="https://ibb.co/G9BtQr0"><img src="" alt="sasha-kaunas-x-Ea-Aoiz-NFV8-unsplash" border="0"></a>
-// <a href="https://ibb.co/7tw2QM0"><img src="" alt="manuel-moreno-DGa0-LQ0y-DPc-unsplash" border="0"></a>
-// <a href="https://ibb.co/cT0rYc0"><img src="" alt="kelsey-curtis-27u-Gzl-AFw-unsplash" border="0"></a>
-// <a href="https://ibb.co/qn9Hvgd"><img src="" alt="eddi-aguirre-ZAVHbp-On4-Jk-unsplash" border="0"></a>

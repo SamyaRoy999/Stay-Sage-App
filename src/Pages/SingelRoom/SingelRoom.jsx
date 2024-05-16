@@ -115,7 +115,8 @@ const SingelRoom = () => {
                                 <span className="font-bold text-gray-700 dark:text-gray-300">Total Reviews :</span>
                                 <span className="text-gray-600 dark:text-gray-300">{total_reviews}</span>
                             </div>
-                            <DatePicker className=" border-2 my-5 border-zinc-600" selected={startDate} onChange={(date) => setStartDate(date)} />
+                            <span>Booking Dete :</span>
+                            <DatePicker className=" border-2 px-2 my-5 border-zinc-600" selected={startDate} onChange={(date) => setStartDate(date)} />
 
                             <div className="flex -mx-2 mb-4">
                                 <div className="w-1/2 px-2" >

@@ -6,7 +6,7 @@ import Swal from "sweetalert2"
 import DatePicker from "react-datepicker";
 import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet";
-
+import { useForm } from "react-hook-form"
 const MyRooms = () => {
     const [myData, setmyData] = useState([])
     const [startDate, setStartDate] = useState(new Date());
@@ -63,10 +63,15 @@ const MyRooms = () => {
         // }
         myRoomsEmail()
     }
-    const handleReviewSubmit = async (e) => {
-        e.preventDefault();
-
-    };
+    
+    const {
+        register,
+        handleSubmit,
+      } = useForm()
+    
+      const onSubmit = (data) => {
+        console.log(data);
+      }
 
     return (
         <div>
@@ -133,11 +138,11 @@ const MyRooms = () => {
                                     <button onClick={() => heldelCancel(item._id)} className="py-2.5 px-6 rounded-lg text-sm font-medium bg-teal-200 text-teal-800">Cancel</button>
                                 </th>
                                 <th>
-                                    <form onSubmit={handleReviewSubmit}>
-                                        <textarea placeholder="comment" className="w-full h-20 border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:ring focus:border-blue-300"></textarea>
-                                        <input type="text" placeholder="timestamp" />
-                                        <input type="number" placeholder="rating" name="" id="" />
-                                        <button type="submit" className="bg-gray-900 text-white px-4 py-2">Submit Review</button>
+                                    <form onSubmit={handleSubmit(onSubmit)}>
+                                        <textarea  {...register("area", { required: true })} placeholder="comment" className="w-full h-20 border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:ring focus:border-blue-300"></textarea> <br />
+                                        <input {...register("timestamp", { required: true })} type="text" placeholder="timestamp" /><br />
+                                        <input {...register("rating", { required: true })} type="number" placeholder="rating" name="" id="" /><br />
+                                        <button  type="submit" className="bg-gray-900 text-white px-4 py-2">Submit Review</button><br />
                                     </form>
                                 </th>
                             </tr>
