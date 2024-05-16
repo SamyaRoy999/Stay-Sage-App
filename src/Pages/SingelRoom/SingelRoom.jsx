@@ -19,7 +19,7 @@ const SingelRoom = () => {
 
     const { id } = useParams()
     useEffect(() => {
-        fetch(`http://localhost:5000/rooms/singel/${id}`)
+        fetch(`https://server-nine-beryl.vercel.app/rooms/singel/${id}`)
             .then(res => res.json())
             .then(data => {
                 setSingleRooms(data);
@@ -48,7 +48,7 @@ const SingelRoom = () => {
         if (isConfirmed) {
 
             try {
-                const { data } = await axios.post("http://localhost:5000/mybook", auhtData)
+                const { data } = await axios.post("https://server-nine-beryl.vercel.app/mybook", auhtData)
                 console.log(data);
                 if (data.acknowledged) {
                     Swal.fire(
@@ -65,7 +65,7 @@ const SingelRoom = () => {
             const data2 = { availability: "unavailable" }
 
             try {
-                const { data } = await axios.patch(`http://localhost:5000/rooms/singel/${id}`, data2)
+                const { data } = await axios.patch(`https://server-nine-beryl.vercel.app/rooms/singel/${id}`, data2)
                 console.log(data);
             } catch (error) {
                 console.log(error);

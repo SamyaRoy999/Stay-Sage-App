@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: "/rooms",
                 element: <Rooms />,
-                loader: ()=> fetch('http://localhost:5000/rooms')
+                loader: ()=> fetch('https://server-nine-beryl.vercel.app/rooms')
             },
             {
                 path: "/singleRoom/:id",

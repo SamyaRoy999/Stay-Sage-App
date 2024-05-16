@@ -14,7 +14,7 @@ const Rooms = () => {
 
     const handleFilter = () => {
 
-        fetch(`http://localhost:5000/roomsr?minPrice=${minPrice}&maxPrice=${maxPrice}`)
+        fetch(`https://server-nine-beryl.vercel.app/roomsr?minPrice=${minPrice}&maxPrice=${maxPrice}`)
             .then(response => response.json())
             .then(data => {
                 setFilteredRooms(data);

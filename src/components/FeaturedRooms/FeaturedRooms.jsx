@@ -1,13 +1,13 @@
 import { useState } from "react"
 import { useEffect } from "react"
 import FeatureCard from "./FeatureCard/FeatureCard"
-// http://localhost:5000
+// https://server-nine-beryl.vercel.app
 
 const FeaturedRooms = () => {
     const [featuredRooms, setFeaturedRooms] = useState([])
     const [logind, setlogind] = useState(true)
     useEffect(() => {
-        fetch('http://localhost:5000/rooms')
+        fetch('https://server-nine-beryl.vercel.app/rooms')
             .then(res => res.json())
             .then(data => {
                 setFeaturedRooms(data)

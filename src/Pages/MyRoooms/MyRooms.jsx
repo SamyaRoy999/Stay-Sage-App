@@ -13,7 +13,7 @@ const MyRooms = () => {
     const { user } = useContext(AuthContext);
     const [modul, setModul] = useState(false)
     const myRoomsEmail = async () => {
-        const { data } = await axios.get(`http://localhost:5000/mybook/${user.email}`)
+        const { data } = await axios.get(`https://server-nine-beryl.vercel.app/mybook/${user.email}`)
         setmyData(data);
     }
 
@@ -35,7 +35,7 @@ const MyRooms = () => {
         });
 
         if (isConfirmed) {
-            const { data } = await axios.delete(`http://localhost:5000/mybook/${id}`);
+            const { data } = await axios.delete(`https://server-nine-beryl.vercel.app/mybook/${id}`);
 
             if (data.deletedCount > 0) {
                 Swal.fire(
@@ -56,7 +56,7 @@ const MyRooms = () => {
     }
     const updateDate = async id => {
         const date = { startDate: startDate.toLocaleDateString("en-GB") }
-        const { data } = await axios.patch(`http://localhost:5000/mybook/${id}`, date)
+        const { data } = await axios.patch(`https://server-nine-beryl.vercel.app/mybook/${id}`, date)
         console.log(data);
         // if (data.acknowledged) {
         //     toast.success('Login Successful!')
