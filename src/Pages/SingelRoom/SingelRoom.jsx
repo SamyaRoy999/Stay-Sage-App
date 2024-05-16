@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { AuthContext } from "../../AuthProvider/AuthProvider"
 import DatePicker from "react-datepicker";
 import axios from 'axios'
+import Swal from "sweetalert2"
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -23,7 +24,7 @@ const SingelRoom = () => {
                 setSingleRooms(data);
             })
     }, [])
-    const addedBook = async() => {
+    const addedBook = async () => {
         const userEmail = user?.email;
 
         const auhtData = {
@@ -34,13 +35,41 @@ const SingelRoom = () => {
         }
 
         console.log(auhtData);
-        try {
-            const { data } = await  axios.post("http://localhost:5000/mybook",auhtData)
-            console.log(data);
-        } catch (error) {
-            console.log(error);
-        }
 
+        const { isConfirmed } = await Swal.fire({
+            title: { name },
+            text: { description },
+            icon: 'warning',
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Confirm Button'
+        });
+        if (isConfirmed) {
+
+            try {
+                const { data } = await axios.post("http://localhost:5000/mybook", auhtData)
+                console.log(data);
+                if (data.acknowledged) {
+                    Swal.fire(
+                        'Book Room',
+                        'Your booking has been successfull.',
+                        'success'
+                    );
+                }
+            } catch (error) {
+                console.log(error);
+            }
+
+
+            const data2 = { availability: "unavailable" }
+
+            try {
+                const { data } = await axios.patch(`http://localhost:5000/rooms/singel/${id}`, data2)
+                console.log(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
     }
     return (
         <div className="bg-gray-100 dark:bg-gray-800 py-16 font-Poppins">
@@ -85,8 +114,8 @@ const SingelRoom = () => {
                             <DatePicker className=" border-2 my-5 border-zinc-600" selected={startDate} onChange={(date) => setStartDate(date)} />
 
                             <div className="flex -mx-2 mb-4">
-                                <div className="w-1/2 px-2">
-                                    <button onClick={addedBook} className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Book Now</button>
+                                <div className="w-1/2 px-2" >
+                                    <button onClick={addedBook} className={`w-full bg-gray-900   dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 ${availability === 'unavailable' ? "cursor-not-allowed opacity-30" : ""} dark:hover:bg-gray-700`} disabled={availability === 'unavailable'}>Book Now</button>
                                 </div>
 
                             </div>
